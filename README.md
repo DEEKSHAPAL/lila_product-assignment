@@ -6,6 +6,8 @@ Deployed app: TODO - add after deployment
 
 Vercel landing page: supported through `vercel.json` and `public/index.html`
 
+Important: the Vercel URL is a static project landing page. The interactive dashboard must be deployed on Streamlit Community Cloud or another Streamlit-compatible host.
+
 This project is a browser-based telemetry visualization tool for the LILA APM written test. It loads five days of LILA BLACK player and bot journey parquet files, maps world x/z coordinates onto the provided minimaps, and helps Level Designers inspect movement routes, combat hotspots, death locations, storm deaths, loot pickups, and match flow.
 
 ## How the Tool Flows
@@ -61,6 +63,7 @@ In normal use, a reviewer opens the app, chooses a map, then decides whether to 
 |-- PRODUCT_APPROACH.md
 |-- TECH_APPROACH.md
 |-- SYSTEM_DESIGN.md
+|-- DEPLOYMENT.md
 |-- FINAL_AUDIT.md
 |-- SUBMISSION_CHECKLIST.md
 |-- .gitignore
@@ -150,6 +153,7 @@ For the Streamlit smoke test, confirm the terminal prints a local URL and does n
 - [Product Approach](PRODUCT_APPROACH.md)
 - [Technical Approach](TECH_APPROACH.md)
 - [System Design](SYSTEM_DESIGN.md)
+- [Deployment Guide](DEPLOYMENT.md)
 - [Final Audit](FINAL_AUDIT.md)
 - [Submission Checklist](SUBMISSION_CHECKLIST.md)
 
@@ -164,7 +168,7 @@ For the Streamlit smoke test, confirm the terminal prints a local URL and does n
 
 ## Vercel Deployment
 
-This repo includes a complete `vercel.json` so Vercel can deploy automatically from GitHub. Because this project is a Streamlit app, Vercel serves a clean static landing page from `public/index.html`. The page points reviewers to the GitHub repo and explains that the interactive dashboard should run on Streamlit Community Cloud or another host that supports long-running Streamlit sessions.
+This repo includes a complete `vercel.json` so Vercel can deploy automatically from GitHub. Because this project is a Streamlit app, Vercel serves a clean static landing page from `public/index.html`. The Vercel page is not the interactive app; it points reviewers to the repo and explains that the dashboard should run on Streamlit Community Cloud or another host that supports long-running Streamlit sessions.
 
 Why this split exists: Streamlit needs a live server connection for the browser UI, while Vercel Functions do not support acting as a WebSocket server. A Vercel deploy is still useful as a project landing page, but the actual playable dashboard should be deployed with Streamlit.
 

@@ -23,6 +23,7 @@
 [ ] PRODUCT_APPROACH.md complete
 [ ] TECH_APPROACH.md complete
 [ ] SYSTEM_DESIGN.md complete
+[ ] DEPLOYMENT.md complete
 [ ] FINAL_AUDIT.md complete
 
 ## Deployment

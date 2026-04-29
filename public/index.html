@@ -16,6 +16,7 @@
         --blue: #46a3ff;
         --green: #73d13d;
         --amber: #f2b84b;
+        --red: #ff6b6b;
       }
 
       * {
@@ -144,6 +145,27 @@
         border-left: 3px solid var(--amber);
       }
 
+      .warning {
+        margin-top: 22px;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 107, 107, 0.42);
+        border-radius: 8px;
+        background: rgba(255, 107, 107, 0.08);
+        color: #ffd0d0;
+        line-height: 1.5;
+      }
+
+      ol {
+        margin: 14px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
       @media (max-width: 820px) {
         main {
           padding-top: 28px;
@@ -171,20 +193,29 @@
             <a class="button primary" href="https://github.com/DEEKSHAPAL/lila_product-assignment">
               GitHub Repository
             </a>
-            <a class="button" href="https://streamlit.io/cloud">
-              Deploy Interactive App on Streamlit Cloud
+            <a class="button" href="https://share.streamlit.io">
+              Open Streamlit Community Cloud
             </a>
+          </div>
+          <div class="warning">
+            This Vercel URL is a project landing page. It is not the interactive
+            Streamlit dashboard.
           </div>
         </div>
 
         <aside class="panel status">
-          <p class="eyebrow">Vercel Deployment</p>
+          <p class="eyebrow">How to launch the real app</p>
           <p class="note">
-            This page is the Vercel-compatible landing page for the project.
-            The interactive dashboard itself is a Streamlit app and should be
-            hosted on Streamlit Community Cloud or another service that supports
-            long-running Streamlit sessions.
+            Deploy the interactive dashboard on Streamlit Community Cloud using
+            the GitHub repo, branch <code>main</code>, and main file
+            <code>app.py</code>.
           </p>
+          <ol>
+            <li>Open Streamlit Community Cloud.</li>
+            <li>Create a new app from the GitHub repo.</li>
+            <li>Set the entry file to <code>app.py</code>.</li>
+            <li>After it deploys, use the <code>streamlit.app</code> URL as the submission app link.</li>
+          </ol>
           <p class="note">
             Local run command:
             <br />
