@@ -6,6 +6,10 @@ Use Streamlit Community Cloud for the interactive dashboard.
 
 Use Vercel only as a static landing page for the project.
 
+Live Streamlit dashboard: `https://lilaappuct-assignment-nc4g2rh8ul5vwyskhnexjc.streamlit.app/`
+
+Vercel landing page: `https://lila-product-assignment-sswh.vercel.app/`
+
 ## Why Vercel Shows a Landing Page
 
 The Vercel URL is working, but it is not supposed to run the full dashboard. This project is a Streamlit app, and Streamlit needs a live Python process and browser connection for the interactive UI. Vercel's serverless runtime is not a good fit for that style of app.
@@ -26,7 +30,7 @@ The repo includes:
 6. Set main file path: `app.py`.
 7. Deploy.
 8. Copy the generated `streamlit.app` URL.
-9. Add that URL to `README.md` under `Deployed app`.
+9. Add that URL to `README.md` under `Deployed app` and to `public/index.html`.
 
 ## Deploy the Landing Page on Vercel
 
