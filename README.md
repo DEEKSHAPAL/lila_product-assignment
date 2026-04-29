@@ -6,7 +6,7 @@ Deployed app: https://lilaappuct-assignment-nc4g2rh8ul5vwyskhnexjc.streamlit.app
 
 Vercel landing page: https://lila-product-assignment-sswh.vercel.app/
 
-Important: the Streamlit URL is the interactive dashboard. The Vercel URL is a static project landing page that points reviewers to the dashboard and repo.
+Important: the Streamlit URL is the interactive dashboard. The Vercel URL is a small landing page with only the GitHub and dashboard links.
 
 This project is a browser-based telemetry visualization tool for the LILA APM written test. It loads five days of LILA BLACK player and bot journey parquet files, maps world x/z coordinates onto the provided minimaps, and helps Level Designers inspect movement routes, combat hotspots, death locations, storm deaths, loot pickups, and match flow.
 
@@ -168,7 +168,7 @@ For the Streamlit smoke test, confirm the terminal prints a local URL and does n
 
 ## Vercel Deployment
 
-This repo includes a complete `vercel.json` so Vercel can deploy automatically from GitHub. Because this project is a Streamlit app, Vercel serves a clean static landing page from `public/index.html`. The Vercel page is not the interactive app; it points reviewers to the live Streamlit dashboard and GitHub repo.
+This repo includes a complete `vercel.json` so Vercel can deploy automatically from GitHub. Because this project is a Streamlit app, Vercel serves a minimal static landing page from `public/index.html`. The Vercel page is not the interactive app; it links reviewers to the live Streamlit dashboard and GitHub repo.
 
 Why this split exists: Streamlit needs a live server connection for the browser UI, while Vercel Functions do not support acting as a WebSocket server. A Vercel deploy is still useful as a project landing page, but the actual playable dashboard should be deployed with Streamlit.
 

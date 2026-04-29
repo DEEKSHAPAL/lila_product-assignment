@@ -17,7 +17,7 @@ The Vercel URL is working, but it is not supposed to run the full dashboard. Thi
 The repo includes:
 
 - `vercel.json` so Vercel can deploy cleanly.
-- `public/index.html` so the Vercel URL shows a polished project page.
+- `public/index.html` so the Vercel URL shows a small project page with only the GitHub and Streamlit links.
 - `app.py` for the real Streamlit dashboard.
 
 ## Deploy the Interactive App on Streamlit Cloud
