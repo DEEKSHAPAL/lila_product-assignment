@@ -107,6 +107,7 @@ The main processed table is `data_processed/all_events.parquet`. Important colum
 ```mermaid
 flowchart TD
     A[GitHub repository] --> B[Streamlit Community Cloud]
+    A --> V[Vercel]
     B --> C[Install requirements.txt]
     C --> D[Run app.py]
     D --> E{Processed data exists?}
@@ -114,7 +115,12 @@ flowchart TD
     E -->|No| G[Process raw February folders]
     G --> F
     F --> H[Public Streamlit URL]
+    V --> I[Read vercel.json]
+    I --> J[Serve public/index.html]
+    J --> K[Static project landing page]
 ```
+
+The Streamlit Cloud path is the production path for the interactive dashboard. The Vercel path is a static landing page because Vercel's serverless function model is not a good runtime for Streamlit's live browser connection.
 
 ## Failure Handling
 
@@ -133,4 +139,3 @@ The assignment rewards end-to-end execution, correct coordinate mapping, clear v
 - Product behavior lives in Streamlit filters and tabs.
 - Visual clarity lives in Plotly layer ordering and marker styles.
 - Evidence lives in generated insights and processed data summaries.
-

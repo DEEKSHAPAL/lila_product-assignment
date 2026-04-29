@@ -135,8 +135,10 @@ streamlit run app.py
 - This telemetry export has compact sub-second match spans after millisecond normalization.
 - Heatmap intensity is row density, not unique player density.
 - The app does not infer teams, objectives, extraction zones, or storm direction because those fields are not in the dataset.
+- Vercel can deploy the included static landing page, but it is not the right host for the live Streamlit dashboard because Vercel Functions do not run as a WebSocket server.
 
 ## Deployment Plan
 
-Deploy to Streamlit Community Cloud with `app.py` as the entry point and `requirements.txt` as the dependency list. The app can process raw data on first run if `data_processed` is missing, but including processed parquet files improves startup time.
+Deploy the interactive dashboard to Streamlit Community Cloud with `app.py` as the entry point and `requirements.txt` as the dependency list. The app can process raw data on first run if `data_processed` is missing, but including processed parquet files improves startup time.
 
+The repo also includes `vercel.json` and `public/index.html` for Vercel. That deployment is a static project landing page, not the interactive dashboard. It exists so the GitHub repo can be connected to Vercel cleanly without producing a broken Streamlit runtime.

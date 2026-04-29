@@ -29,7 +29,8 @@
 
 [ ] GitHub repo created
 [ ] All required files committed
-[ ] App deployed
-[ ] Deployed URL added to README.md
-[ ] Deployed URL tested in browser
+[ ] Interactive Streamlit app deployed
+[ ] Vercel landing page deployed, if using Vercel
+[ ] Deployed app URL added to README.md
+[ ] Deployed URLs tested in browser
 [ ] Repo link ready to submit

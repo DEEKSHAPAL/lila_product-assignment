@@ -4,6 +4,8 @@ GitHub repo: https://github.com/DEEKSHAPAL/lila_product-assignment
 
 Deployed app: TODO - add after deployment
 
+Vercel landing page: supported through `vercel.json` and `public/index.html`
+
 This project is a browser-based telemetry visualization tool for the LILA APM written test. It loads five days of LILA BLACK player and bot journey parquet files, maps world x/z coordinates onto the provided minimaps, and helps Level Designers inspect movement routes, combat hotspots, death locations, storm deaths, loot pickups, and match flow.
 
 ## How the Tool Flows
@@ -52,6 +54,7 @@ In normal use, a reviewer opens the app, chooses a map, then decides whether to 
 .
 |-- app.py
 |-- requirements.txt
+|-- vercel.json
 |-- README.md
 |-- ARCHITECTURE.md
 |-- INSIGHTS.md
@@ -61,6 +64,8 @@ In normal use, a reviewer opens the app, chooses a map, then decides whether to 
 |-- FINAL_AUDIT.md
 |-- SUBMISSION_CHECKLIST.md
 |-- .gitignore
+|-- public/
+|   `-- index.html
 |-- .streamlit/
 |   `-- config.toml
 |-- src/
@@ -156,5 +161,18 @@ For the Streamlit smoke test, confirm the terminal prints a local URL and does n
 4. Let Streamlit install packages from `requirements.txt`.
 5. Open the deployed app and verify map filters, timeline, markers, heatmaps, and CSV download.
 6. Add the deployed URL above after the app is live.
+
+## Vercel Deployment
+
+This repo includes a complete `vercel.json` so Vercel can deploy automatically from GitHub. Because this project is a Streamlit app, Vercel serves a clean static landing page from `public/index.html`. The page points reviewers to the GitHub repo and explains that the interactive dashboard should run on Streamlit Community Cloud or another host that supports long-running Streamlit sessions.
+
+Why this split exists: Streamlit needs a live server connection for the browser UI, while Vercel Functions do not support acting as a WebSocket server. A Vercel deploy is still useful as a project landing page, but the actual playable dashboard should be deployed with Streamlit.
+
+To deploy the landing page on Vercel:
+
+1. Import `https://github.com/DEEKSHAPAL/lila_product-assignment` into Vercel.
+2. Keep the default root directory.
+3. Vercel will read `vercel.json` and publish `public/index.html`.
+4. After the Streamlit app is deployed, update the deployed app URL in this README and optionally add that link to `public/index.html`.
 
 The raw data appears to be assessment data and may be larger than a normal code-only repo. Keep the repository private unless the assignment explicitly allows publishing the files.

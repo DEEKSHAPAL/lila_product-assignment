@@ -2,7 +2,7 @@
 
 ## Summary
 
-The project is ready to push to GitHub and deploy. The local Streamlit app starts successfully, the raw telemetry processing pipeline reads all provided extensionless parquet files, tests pass, minimaps load, and `INSIGHTS.md` contains three evidence-backed insights generated from the processed dataset. The only remaining submission work is manual deployment and adding the live URL to `README.md`.
+The project is ready to push to GitHub and deploy. The local Streamlit app starts successfully, the raw telemetry processing pipeline reads all provided extensionless parquet files, tests pass, minimaps load, and `INSIGHTS.md` contains three evidence-backed insights generated from the processed dataset. The repo now also includes Vercel static landing-page support. The only remaining submission work is manual deployment and adding the live interactive app URL to `README.md`.
 
 ## Requirement Checklist
 
@@ -16,6 +16,7 @@ The project is ready to push to GitHub and deploy. The local Streamlit app start
 | Timeline/playback | Pass | `app.py` single-match timeline slider, full-path toggle, recent-window control, and time-scoped metrics |
 | Heatmaps | Pass | `src/visualization.py` 2D histogram overlays for Traffic, Kills, Deaths, Storm Deaths, and Loot |
 | Hosted URL | Manual step | `README.md` has deployment placeholder: `Deployed app: TODO - add after deployment` |
+| Vercel config | Pass | `vercel.json` deploys `public/index.html` as a static project landing page |
 | Architecture doc | Pass | `ARCHITECTURE.md` covers stack, data flow, coordinate mapping, timestamp handling, bot detection, events, tradeoffs, and assumptions |
 | System design doc | Pass | `SYSTEM_DESIGN.md` covers components, runtime flow, data model, deployment shape, and failure handling |
 | Insights doc | Pass | `INSIGHTS.md` has exactly three generated insights with concrete counts, percentages, recommendations, affected metrics, and designer relevance |
@@ -57,12 +58,14 @@ The project is ready to push to GitHub and deploy. The local Streamlit app start
 - The processed timestamp spans in this export are compact after millisecond normalization, so the UI supports fractional-second timeline sliders.
 - Heatmap intensity represents row density, not unique player density.
 - The app does not infer teams, objective locations, extraction zones, or storm direction because those fields are not present in the provided schema.
+- Vercel deployment is a static landing page. The interactive dashboard should be deployed on Streamlit Cloud or another Streamlit-compatible host.
 - The deployed URL is not available until the project is pushed and hosted.
 
 ## Manual Steps Before Submission
 
 1. Push repo to GitHub.
-2. Deploy to Streamlit Cloud or selected hosting provider.
-3. Update `README.md` with deployed URL.
-4. Open deployed URL and verify app works.
-5. Submit single GitHub repo link.
+2. Deploy the interactive app to Streamlit Cloud or another Streamlit-compatible host.
+3. Optionally deploy the Vercel landing page from the same GitHub repo.
+4. Update `README.md` with the deployed interactive app URL.
+5. Open deployed URLs and verify they work.
+6. Submit single GitHub repo link.

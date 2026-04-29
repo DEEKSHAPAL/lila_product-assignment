@@ -105,6 +105,7 @@ Unknown events are retained and flagged with `unknown_event`.
 | No individual paths in all-match view | Keeps aggregate maps readable | Aggregate route shape is shown through heatmaps |
 | Manual timeline slider | Reliable and testable | No automatic playback loop |
 | Row-density heatmaps | Simple and transparent | Does not deduplicate by player |
+| Vercel static landing page | GitHub can deploy cleanly on Vercel | Interactive Streamlit app still needs Streamlit-compatible hosting |
 
 ## Assumptions
 
@@ -113,4 +114,3 @@ Unknown events are retained and flagged with `unknown_event`.
 - Full `match_id` values are preserved.
 - The minimap images are 1024x1024 pixels.
 - February 14 is a partial day and is not scaled up.
-
